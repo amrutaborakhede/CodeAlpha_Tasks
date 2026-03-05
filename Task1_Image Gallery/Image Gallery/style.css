@@ -1,0 +1,234 @@
+:root{
+  --accent:#00d2ff;
+  --accent2:#3a7bd5;
+}
+
+/* ===== Animated Background ===== */
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  color:white;
+  padding:40px 20px;
+  background:linear-gradient(-45deg,#020617,#0f172a,#020617,#1e293b);
+  background-size:400% 400%;
+  animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* ===== Header ===== */
+.header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.header h1{
+  font-size:2.8rem;
+  background:linear-gradient(45deg,var(--accent),var(--accent2));
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:glowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowText{
+  from{filter:drop-shadow(0 0 5px var(--accent));}
+  to{filter:drop-shadow(0 0 18px var(--accent));}
+}
+
+/* ===== Filters ===== */
+.filters{
+  margin-top:20px;
+}
+
+.filter-btn{
+  padding:10px 20px;
+  margin:5px;
+  border-radius:30px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.08);
+  color:white;
+  cursor:pointer;
+  transition:.3s;
+  backdrop-filter:blur(8px);
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+  background:var(--accent);
+  color:black;
+  box-shadow:0 0 18px var(--accent);
+  transform:translateY(-2px);
+}
+
+/* ===== Grid ===== */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* ===== Card ===== */
+.gallery-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  cursor:pointer;
+  transition:.5s;
+  border:2px solid transparent;
+  background:linear-gradient(#0f172a,#0f172a) padding-box,
+             linear-gradient(45deg,var(--accent),var(--accent2)) border-box;
+  animation:floatCard 5s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
+}
+
+.gallery-item:hover{
+  transform:translateY(-15px) scale(1.03);
+  box-shadow:0 25px 50px rgba(0,0,0,.7);
+}
+
+/* ===== Image ===== */
+.gallery-item img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  transition:.6s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.2);
+  filter:brightness(.6);
+}
+
+/* ===== Shine Sweep Effect ===== */
+.gallery-item::after{
+  content:"";
+  position:absolute;
+  top:-100%;
+  left:-100%;
+  width:200%;
+  height:200%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.25),
+    transparent
+  );
+  transform:rotate(25deg);
+  transition:.6s;
+}
+
+.gallery-item:hover::after{
+  top:100%;
+  left:100%;
+}
+
+/* ===== Overlay ===== */
+.overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:15px;
+  opacity:0;
+  transition:.4s;
+  background:linear-gradient(transparent,rgba(0,0,0,.9));
+}
+
+.gallery-item:hover .overlay{
+  opacity:1;
+}
+
+/* ===== Icons ===== */
+.icons i{
+  margin-right:12px;
+  font-size:18px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+/* Heart Beat */
+.like.active{
+  color:red;
+  animation:heartBeat .6s ease;
+}
+
+@keyframes heartBeat{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.4);}
+  100%{transform:scale(1);}
+}
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(12px);
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  animation:fadeIn .4s;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+.lightbox img{
+  max-width:85%;
+  max-height:70vh;
+  border-radius:14px;
+  box-shadow:0 20px 60px rgba(0,0,0,.8);
+}
+
+.lightbox h2{
+  margin-top:15px;
+  letter-spacing:1px;
+}
+
+/* Close */
+.close{
+  position:absolute;
+  top:30px;
+  right:40px;
+  font-size:35px;
+  cursor:pointer;
+}
+
+/* Nav */
+.prev,.next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  padding:12px 16px;
+  border:none;
+  background:rgba(255,255,255,.2);
+  color:white;
+  cursor:pointer;
+  border-radius:50%;
+  transition:.3s;
+}
+
+.prev:hover,.next:hover{
+  background:var(--accent);
+  color:black;
+}
+
+.prev{left:30px;}
+.next{right:30px;}

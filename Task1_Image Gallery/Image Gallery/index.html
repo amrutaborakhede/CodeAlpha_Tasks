@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Visual Gallery</h1>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="flowers">Flowers</button>
+            <button class="filter-btn" data-filter="beaches">Beaches</button>
+            <button class="filter-btn" data-filter="urban">Urban</button>
+            <button class="filter-btn" data-filter="food">Food</button>
+        </div>
+    </div>
+
+    <div class="gallery-grid" id="gallery">
+        <div class="gallery-item nature" data-index="0">
+            <img src="/Images/mountains.jpeg" alt="Misty Forest">
+            <div class="item-overlay">
+                <p>Nature</p>
+                <h3>Natural Beauty</h3>
+            </div>
+        </div>
+        <div class="gallery-item flowers" data-index="0">
+            <img src="/Images/Lily.jpeg" alt="lily">
+            <div class="item-overlay">
+                <p>Flowers</p>
+                <h3>Lily</h3>
+            </div>
+        </div>
+        <div class="gallery-item urban" data-index="1">
+            <img src="/Images/citylights.jpeg" alt="City Lights">
+            <div class="item-overlay">
+                <p>Urban</p>
+                <h3>City Lights</h3>
+            </div>
+        </div>
+        <div class="gallery-item food" data-index="1">
+            <img src="/Images/Snacks.jpeg" alt="snacks">
+            <div class="item-overlay">
+                <p>Food</p>
+                <h3>Snacks</h3>
+            </div>
+        </div>
+        <div class="gallery-item flowers" data-index="2">
+            <img src="/Images/roses.jpeg" alt="Roses">
+            <div class="item-overlay">
+                <p>Flowers</p>
+                <h3>Pink Roses</h3>
+            </div>
+        </div>
+        <div class="gallery-item beaches" data-index="3">
+            <img src="/Images/beach1.jpeg" alt="Relax">
+            <div class="item-overlay">
+                <p>Beaches</p>
+                <h3>Relaxment</h3>
+            </div>
+        </div>
+        <div class="gallery-item food" data-index="3">
+            <img src="/Images/Pastry.jpeg" alt="Relax">
+            <div class="item-overlay">
+                <p>Food</p>
+                <h3>Pastry</h3>
+            </div>
+        </div>
+        <div class="gallery-item nature" data-index="3">
+            <img src="/Images/river.jpeg" alt="Relax">
+            <div class="item-overlay">
+                <p>Nature</p>
+                <h3>River</h3>
+            </div>
+        </div>
+        <div class="gallery-item flowers" data-index="3">
+            <img src="/Images/Waterlily.jpeg" alt="Relax">
+            <div class="item-overlay">
+                <p>Flowers</p>
+                <h3>Water Lily</h3>
+            </div>
+        </div>
+        
+        <div class="gallery-item food" data-index="4">
+            <img src="/Images/cake.jpeg" alt="cake">
+            <div class="item-overlay">
+                <p>Food</p>
+                <h3>Cake</h3>
+            </div>
+        </div>
+        <div class="gallery-item nature" data-index="5">
+            <img src="/Images/Waterfall.jpeg" alt="Waterfall">
+            <div class="item-overlay">
+                <p>Nature</p>
+                <h3>Beautiful Waterfall</h3>
+            </div>
+        </div>
+        <div class="gallery-item urban" data-index="6">
+            <img src="/Images/metropolis.jpeg" alt="Metropolis">
+            <div class="item-overlay">
+                <p>Urban</p>
+                <h3>Metropolis</h3>
+            </div>
+        </div>
+        <div class="gallery-item nature" data-index="6">
+            <img src="/Images/sunsetmountain.jpeg" alt="mountain">
+            <div class="item-overlay">
+                <p>Nature</p>
+                <h3>Mountain</h3>
+            </div>
+        </div>
+        <div class="gallery-item flowers" data-index="7">
+            <img src="/Images/tulip.jpg" alt="tulip">
+            <div class="item-overlay">
+                <p>Flowers</p>
+                <h3>Tulip</h3>
+            </div>
+        </div>
+        <div class="gallery-item beaches" data-index="8">
+            <img src="/Images/beach2.jpeg" alt="sunset">
+            <div class="item-overlay">
+                <p>Beaches</p>
+                <h3>Sunset</h3>
+            </div>
+        </div>
+        <div class="gallery-item food" data-index="9">
+            <img src="/Images/pizza.jpeg" alt="pizza">
+            <div class="item-overlay">
+                <p>Food</p>
+                <h3>Pizza</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="close-btn">&times;</button>
+            <button class="nav-btn prev-btn">❮</button>
+            <img id="lightbox-img" src="" alt="Lightbox Image">
+            <button class="nav-btn next-btn">❯</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
